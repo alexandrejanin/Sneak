@@ -281,7 +281,7 @@ MonoBehaviour:
   counterAccelerationTime: 0.125
   stopTime: 0.3
   gravity: -20
-  jumpHeight: 2
+  jumpHeight: 1
   tiltStrength: 1
   crouchHeight: 0.5
 --- !u!114 &3083224510854228410
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993a720e041cdfe458c5c15f603e8af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  updateRate: 60
   pointsToCheck:
   - {fileID: 1052773472014308453}
   - {fileID: 2659171748857378803}
