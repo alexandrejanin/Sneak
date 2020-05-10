@@ -13,8 +13,8 @@ public class PlayerCamera : MonoBehaviour {
     }
 
     private void Update() {
-        var x = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        var y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        var x = Input.GetAxis("Mouse X") * sensitivity;
+        var y = Input.GetAxis("Mouse Y") * sensitivity;
 
         pitch -= y;
         pitch = Mathf.Clamp(pitch, -89.9f, 89.9f);
