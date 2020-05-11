@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfa6009187093c4caf62e9201f1726d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomChance: 0.75
+  roomChance: 1
+  roomChanceDecay: 0.1
   fullWall: {fileID: 3063075386565403386}
   doorWall: {fileID: 5819743401558147354}
   door: {fileID: 2964910430075637069}

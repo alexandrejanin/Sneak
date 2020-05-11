@@ -219,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 1.875, z: 0}
-    m_Extent: {x: 5, y: 2, z: 5}
+    m_Extent: {x: 4.9, y: 2, z: 4.9}
   doorways:
   - {fileID: 1129774003065847741}
   - {fileID: 2592688174754127589}
@@ -2042,7 +2042,7 @@ PrefabInstance:
     - target: {fileID: 5215926847963526464, guid: 8b8dfde3d42d0514cbdc25a016165dae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5215926847963526464, guid: 8b8dfde3d42d0514cbdc25a016165dae,
         type: 3}

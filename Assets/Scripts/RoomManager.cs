@@ -12,7 +12,7 @@ public class RoomManager : MonoBehaviour {
 
     private void Start() {
         var room = Instantiate(RandomRoomPrefab());
-        room.Spawn(0);
+        room.Generate(0);
         Instantiate(playerPrefab, Vector3.up, Quaternion.identity);
     }
 

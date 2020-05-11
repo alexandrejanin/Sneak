@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 public class Doorway : MonoBehaviour {
-    [SerializeField] private float roomChance = 0.5f;
+    [SerializeField] private float roomChance = 1f;
+    [SerializeField] private float roomChanceDecay = 0.2f;
     [SerializeField] private GameObject fullWall;
     [SerializeField] private GameObject doorWall;
     [SerializeField] private GameObject door;
@@ -13,7 +14,7 @@ public class Doorway : MonoBehaviour {
     }
 
     public void TrySpawnRoom(int degree) {
-        if (Random.value < roomChance - 0.1f * degree)
+        if (Random.value < roomChance - roomChanceDecay * degree)
             SpawnRoom(degree);
         else
             Disable();
@@ -26,7 +27,7 @@ public class Doorway : MonoBehaviour {
             return;
         }
 
-        room.Spawn(degree + 1);
+        room.Generate(degree + 1);
         SetActive();
     }
 

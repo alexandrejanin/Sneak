@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 public class Room : MonoBehaviour {
     [SerializeField] private Bounds bounds;
@@ -8,7 +6,7 @@ public class Room : MonoBehaviour {
 
     private Doorway originDoorway;
 
-    public void Spawn(int degree) {
+    public void Generate(int degree) {
         foreach (var d in doorways)
             if (d == originDoorway)
                 d.SetActiveWithoutDoor();
@@ -29,19 +27,17 @@ public class Room : MonoBehaviour {
         var doorwayToOrigin = transform.position - doorway.transform.position;
         var origin = parent.transform.position + rotation * doorwayToOrigin;
 
-        var obstacleHit = Physics.BoxCast(
-            origin + rotation * bounds.center,
-            bounds.extents,
-            -parent.transform.forward,
-            rotation
-        );
+        var hits = new RaycastHit[10];
 
-        Debug.Log(obstacleHit
-            ? $"Box cast at {origin + bounds.center} failed"
-            : $"Box cast at {origin + bounds.center} succeeded"
-        );
+        var size = Physics.BoxCastNonAlloc(origin + rotation * bounds.center, bounds.extents,
+            -parent.transform.forward, hits, rotation);
 
-        if (obstacleHit)
+        for (var index = 0; index < size; index++) {
+            var hit = hits[index];
+            Debug.Log(hit.collider.gameObject.name);
+        }
+
+        if (size > 0)
             return null;
 
         var room = Instantiate(this, origin, rotation);
