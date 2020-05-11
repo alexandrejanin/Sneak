@@ -343,6 +343,7 @@ MonoBehaviour:
     type: 3}
   roomPrefabs:
   - {fileID: 4133897057437481349, guid: f962d00fd8e174940aedd6056109bdb4, type: 3}
+  - {fileID: 8289796371797422798, guid: 8e0a0990a3b016c4a80f52eb50d80e86, type: 3}
 --- !u!114 &1252453073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e29055b698740408f6db974f4a206f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLight: {fileID: 0}
   bar: {fileID: 70489470}
   gradient:
     serializedVersion: 2
