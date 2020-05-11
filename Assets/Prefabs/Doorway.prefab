@@ -85,7 +85,6 @@ Transform:
   m_Children:
   - {fileID: 3063075386565650720}
   - {fileID: 5819743401558110636}
-  - {fileID: 2964910430076002411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,25 +103,33 @@ MonoBehaviour:
   roomChance: 0.75
   fullWall: {fileID: 3063075386565403386}
   doorWall: {fileID: 5819743401558147354}
-  door: {fileID: 2964910430075712579}
+  door: {fileID: 2964910430075637069}
 --- !u!1001 &2964910430075568495
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5215926847963526464}
+    m_TransformParent: {fileID: 5819743401558110636}
     m_Modifications:
     - target: {fileID: 144684, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: DoorFrame
       objectReference: {fileID: 0}
     - target: {fileID: 144684, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 144684, guid: 9094862f648f77641af28567c096d27a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 199714, guid: 9094862f648f77641af28567c096d27a, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 434436, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 434436, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -150,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434436, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434436, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -196,12 +203,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2964910430075568495}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2964910430076002411 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 434436, guid: 9094862f648f77641af28567c096d27a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2964910430075568495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2964910430075637069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 199714, guid: 9094862f648f77641af28567c096d27a,
@@ -225,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184882, guid: c38218b7d59ce344e811900272cc499c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 465384, guid: c38218b7d59ce344e811900272cc499c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 465384, guid: c38218b7d59ce344e811900272cc499c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01
+      value: 0.2333333
       objectReference: {fileID: 0}
     - target: {fileID: 465384, guid: c38218b7d59ce344e811900272cc499c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -308,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorWall
       objectReference: {fileID: 0}
+    - target: {fileID: 121502, guid: 6e5e063fa9e44494ca5d9ce898c24e6d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 436776, guid: 6e5e063fa9e44494ca5d9ce898c24e6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -318,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436776, guid: 6e5e063fa9e44494ca5d9ce898c24e6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01
+      value: 0.2333333
       objectReference: {fileID: 0}
     - target: {fileID: 436776, guid: 6e5e063fa9e44494ca5d9ce898c24e6d, type: 3}
       propertyPath: m_LocalRotation.x

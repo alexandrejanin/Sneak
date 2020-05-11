@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Room : MonoBehaviour {
     [SerializeField] private Bounds bounds;
@@ -16,22 +18,27 @@ public class Room : MonoBehaviour {
         name = "Room " + degree;
     }
 
-    public Room TrySpawn(Doorway oldDoorway) {
+    public Room TrySpawn(Doorway parent) {
         var doorwayIndex = Random.Range(0, doorways.Length);
         var doorway = doorways[doorwayIndex];
 
-        //todo: fix upside-down rooms
-        var rotation = Quaternion.FromToRotation(doorway.transform.forward, -oldDoorway.transform.forward);
+        var targetRotation = parent.transform.eulerAngles.y + 180;
+        var currentRotation = doorway.transform.eulerAngles.y;
+        var rotation = Quaternion.Euler(0, targetRotation - currentRotation, 0);
 
         var doorwayToOrigin = transform.position - doorway.transform.position;
-        var origin = oldDoorway.transform.position + rotation * doorwayToOrigin;
+        var origin = parent.transform.position + rotation * doorwayToOrigin;
 
         var obstacleHit = Physics.BoxCast(
-            origin,
+            origin + rotation * bounds.center,
             bounds.extents,
-            -oldDoorway.transform.forward,
-            rotation,
-            LayerMask.NameToLayer("Terrain")
+            -parent.transform.forward,
+            rotation
+        );
+
+        Debug.Log(obstacleHit
+            ? $"Box cast at {origin + bounds.center} failed"
+            : $"Box cast at {origin + bounds.center} succeeded"
         );
 
         if (obstacleHit)
