@@ -298,6 +298,7 @@ MonoBehaviour:
   doorways:
   - {fileID: 3445242298163724602}
   - {fileID: 3445242297791328323}
+  isCorridor: 1
 --- !u!1 &8289796372853240851
 GameObject:
   m_ObjectHideFlags: 0

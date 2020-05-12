@@ -394,6 +394,7 @@ MonoBehaviour:
   doorways:
   - {fileID: 3445242298163724602}
   - {fileID: 2754357681058736937}
+  isCorridor: 1
 --- !u!65 &3403340812024762286
 BoxCollider:
   m_ObjectHideFlags: 0
