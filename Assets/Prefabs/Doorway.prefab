@@ -12,7 +12,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9256868, y: 3.44881, z: 0.36}
-  m_Center: {x: -0.96026766, y: 1.724405, z: 0}
+  m_Center: {x: -1, y: 1.724405, z: 0}
 --- !u!114 &6441842249247688659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,8 +25,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867a2cae6ef79d64692a0d261797667c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closedAngle: 0
-  openAngle: 80
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -80
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   duration: 1
 --- !u!64 &8357605739405919713
 MeshCollider:

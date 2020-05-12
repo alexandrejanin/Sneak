@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 5723836949553081984}
-  maxDist: 1
+  maxDist: 2
 --- !u!1 &7629224212732520002
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,35 +2,37 @@
 using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable {
-    [SerializeField] private float closedAngle;
-    [SerializeField] private float openAngle = 90;
+    [SerializeField] private AnimationCurve curve;
     [SerializeField] private float duration;
 
-    private float Speed => Mathf.Abs(openAngle - closedAngle) / duration;
-
     private bool open;
+    private float value;
+
+    private void Awake() {
+        value = transform.localEulerAngles.y;
+    }
 
     private void Update() {
-        var currentAngle = transform.localEulerAngles.y;
-        var targetAngle = open ? openAngle : closedAngle;
+        var targetValue = open ? 1 : 0;
 
-        if (Mathf.Abs(currentAngle - targetAngle) < float.Epsilon)
+        if (Mathf.Abs(value - targetValue) < float.Epsilon)
             return;
 
-        var newAngle = currentAngle < targetAngle
-            ? Mathf.Min(currentAngle + Speed * Time.deltaTime, targetAngle)
-            : Mathf.Max(currentAngle - Speed * Time.deltaTime, targetAngle);
+        var diff = Mathf.Sign(targetValue - value) * Time.deltaTime / duration;
+
+        value = Mathf.Clamp01(value + diff);
+
+        var angle = curve.Evaluate(value);
 
         transform.localEulerAngles = new Vector3(
             transform.localEulerAngles.x,
-            newAngle,
+            angle,
             transform.localEulerAngles.z
         );
     }
 
     [Button]
     public void Interact() {
-        StopAllCoroutines();
         if (open)
             Close();
         else
