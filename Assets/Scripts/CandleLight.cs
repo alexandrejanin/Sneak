@@ -4,6 +4,7 @@ public class CandleLight : MonoBehaviour {
     [SerializeField] private new Transform light;
     [SerializeField] private float radius = 0.01f;
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float offset = 0.123f;
 
     private Vector3 basePosition;
 

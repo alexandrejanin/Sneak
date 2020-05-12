@@ -27,15 +27,8 @@ public class Room : MonoBehaviour {
         var doorwayToOrigin = transform.position - doorway.transform.position;
         var origin = parent.transform.position + rotation * doorwayToOrigin;
 
-        var hits = new RaycastHit[10];
-
         var size = Physics.BoxCastNonAlloc(origin + rotation * bounds.center, bounds.extents,
-            -parent.transform.forward, hits, rotation);
-
-        for (var index = 0; index < size; index++) {
-            var hit = hits[index];
-            Debug.Log(hit.collider.gameObject.name);
-        }
+            -parent.transform.forward, new RaycastHit[1], rotation);
 
         if (size > 0)
             return null;

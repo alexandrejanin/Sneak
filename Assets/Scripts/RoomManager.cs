@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviour {
     }
 
     private void Start() {
-        var room = Instantiate(RandomRoomPrefab());
+        var room = Instantiate(roomPrefabs[0]);
         room.Generate(0);
         Instantiate(playerPrefab, Vector3.up, Quaternion.identity);
     }

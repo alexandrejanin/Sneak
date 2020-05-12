@@ -13,6 +13,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9256868, y: 3.44881, z: 0.36}
   m_Center: {x: -0.96026766, y: 1.724405, z: 0}
+--- !u!114 &6441842249247688659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964910430075637069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867a2cae6ef79d64692a0d261797667c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closedAngle: 0
+  openAngle: 80
+  duration: 1
 --- !u!64 &8357605739405919713
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -186,15 +201,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453176, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6427876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453176, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7660445
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453176, guid: 9094862f648f77641af28567c096d27a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9094862f648f77641af28567c096d27a, type: 3}

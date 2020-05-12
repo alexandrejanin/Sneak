@@ -6,11 +6,18 @@ public class PlayerLight : MonoBehaviour {
 
     public float LightLevel { get; private set; }
 
-    private void Awake() {
-        InvokeRepeating(nameof(UpdateLight), 0, 1 / updateRate);
+    private float timer;
+
+    private void Update() {
+        timer += Time.deltaTime;
+        if (timer < 1 / updateRate)
+            return;
+
+        UpdateLightLevel();
+        timer = 0;
     }
 
-    private void UpdateLight() {
+    private void UpdateLightLevel() {
         LightLevel = 0;
         foreach (var lightSource in FindObjectsOfType<LightSource>()) {
             if (!lightSource || !lightSource.isActiveAndEnabled) continue;
