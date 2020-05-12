@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour {
+public class PlayerInteraction : MonoBehaviour, IInteracter {
     [SerializeField] private Transform startPoint;
     [SerializeField, Min(0)] private float maxDist;
 
+    public Vector3 position => startPoint.position;
+
     private void Update() {
         if (Input.GetKeyDown(KeyCode.F))
-            Interact();
+            TryInteract();
     }
 
-    private void Interact() {
+    private void TryInteract() {
         RaycastHit hit;
         if (!Physics.Raycast(startPoint.position, startPoint.forward, out hit, maxDist))
             return;
 
         var interactable = hit.transform.GetComponent<IInteractable>();
-        interactable?.Interact();
+        interactable?.Interact(this);
     }
 
     private void OnDrawGizmosSelected() {
