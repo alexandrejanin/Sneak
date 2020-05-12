@@ -32,7 +32,7 @@ public class Door : MonoBehaviour, IInteractable {
     }
 
     [Button]
-    public void Interact() {
+    public void Interact(IInteracter interacter) {
         if (open)
             Close();
         else
