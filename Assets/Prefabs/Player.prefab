@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateRate: 10
-  activationRadius: 30
+  activationRadius: 20
 --- !u!114 &877845099121538212
 MonoBehaviour:
   m_ObjectHideFlags: 0
