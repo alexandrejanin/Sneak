@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable {
     [SerializeField] private AnimationCurve curve;
+    [SerializeField] private float angle;
     [SerializeField] private float duration;
 
     private bool open;
     private float value;
+
+    public bool Open => open;
 
     private void Awake() {
         value = transform.localEulerAngles.y;
@@ -22,28 +25,19 @@ public class Door : MonoBehaviour, IInteractable {
 
         value = Mathf.Clamp01(value + diff);
 
-        var angle = curve.Evaluate(value);
-
         transform.localEulerAngles = new Vector3(
             transform.localEulerAngles.x,
-            angle,
+            angle * curve.Evaluate(value),
             transform.localEulerAngles.z
         );
     }
 
     [Button]
     public void Interact(IInteracter interacter) {
+        open = !open;
+
         if (open)
-            Close();
-        else
-            Open();
-    }
-
-    private void Open() {
-        open = true;
-    }
-
-    private void Close() {
-        open = false;
+            angle = Mathf.Sign(Vector3.Dot(transform.forward, transform.position - interacter.Position)) *
+                    Mathf.Abs(angle);
     }
 }

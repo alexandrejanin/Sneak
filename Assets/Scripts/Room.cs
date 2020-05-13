@@ -4,10 +4,12 @@ using UnityEngine;
 public class Room : MonoBehaviour {
     [SerializeField] private Bounds bounds;
     [SerializeField] private Doorway[] doorways;
+    [SerializeField] private Transform[] patrolPoints;
     [SerializeField] private bool isCorridor;
 
     public Bounds Bounds => bounds;
     public Doorway[] Doorways => doorways;
+    public Transform[] PatrolPoints => patrolPoints;
     public bool IsCorridor => isCorridor;
 
     private Doorway parent;

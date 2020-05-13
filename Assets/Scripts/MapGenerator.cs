@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour {
     [SerializeField] private GameObject playerPrefab;
@@ -7,18 +8,25 @@ public class MapGenerator : MonoBehaviour {
 
     private static MapGenerator instance;
 
+    private GuardSpawner guardSpawner;
+
+    private Room firstRoom;
+
     private void Awake() {
         instance = this;
+        guardSpawner = GetComponent<GuardSpawner>();
     }
 
     private void Start() {
         GenerateMap();
+        firstRoom.GetComponent<NavMeshSurface>().BuildNavMesh();
         Instantiate(playerPrefab, Vector3.up, Quaternion.identity);
+        guardSpawner.SpawnGuards();
     }
 
     private void GenerateMap() {
         var queue = new Queue<DoorNode>();
-        var firstRoom = Instantiate(roomPrefabs[0]);
+        firstRoom = Instantiate(roomPrefabs[0]);
 
         foreach (var node in firstRoom.GetNodes()) {
             queue.Enqueue(node);

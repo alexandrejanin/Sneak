@@ -11,8 +11,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9256868, y: 3.44881, z: 0.36}
-  m_Center: {x: -1, y: 1.724405, z: 0}
+  m_Size: {x: 1.92, y: 3.448, z: 0.36}
+  m_Center: {x: -0.96, y: 1.724, z: 0}
+--- !u!208 &5695618748077627155
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964910430075637069}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.96, y: 1.7240001, z: 0.18}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.96, y: 1.7240001, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &6441842249247688659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,7 +55,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: -80
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -49,6 +65,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  angle: 80
   duration: 1
 --- !u!64 &8357605739405919713
 MeshCollider:
@@ -137,8 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfa6009187093c4caf62e9201f1726d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomChance: 1
-  roomChanceDecay: 0.1
   fullWall: {fileID: 3063075386565403386}
   doorWall: {fileID: 5819743401558147354}
   door: {fileID: 2964910430075637069}

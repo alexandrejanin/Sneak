@@ -4,7 +4,7 @@ public class PlayerInteraction : MonoBehaviour, IInteracter {
     [SerializeField] private Transform startPoint;
     [SerializeField, Min(0)] private float maxDist;
 
-    public Vector3 position => startPoint.position;
+    public Vector3 Position => startPoint.position;
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.F))

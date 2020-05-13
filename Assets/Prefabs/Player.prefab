@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 3083224510854228410}
   - component: {fileID: 8727498429954145377}
   - component: {fileID: 877845099121538212}
+  - component: {fileID: 8013415623987553412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -277,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  crouchSpeed: 1
+  crouchSpeed: 2
   sprintSpeed: 5
   accelerationTime: 0.25
   counterAccelerationTime: 0.125
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateRate: 10
   activationRadius: 20
+  text: {fileID: 0}
 --- !u!114 &877845099121538212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +333,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 5723836949553081984}
   maxDist: 2
+--- !u!208 &8013415623987553412
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723836950605160440}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.4, y: 1, z: 0.4}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7629224212732520002
 GameObject:
   m_ObjectHideFlags: 0
